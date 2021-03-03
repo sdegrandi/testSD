@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      To Do list
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">To Do</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form #form="ngForm" (ngSubmit) = "onSubmit(form.value.text)" >
+    <input type="text" name="text" ngModel>
+    <input type="submit" value="submit" />
+  </form>
+
+  <ion-list>
+    <ion-item *ngFor="let item of items" (click)="viewItem(item)">{{item}}</ion-item>
+  </ion-list>
+
+  
+</ion-content>
